@@ -6,7 +6,7 @@
         android:id="@+id/addtask_menu"
         android:icon="@drawable/ic_action_content_new"
         android:title="Add a Task"
-       >
+        app:showAsAction="always">
     </item>
 
 

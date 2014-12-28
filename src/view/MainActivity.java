@@ -62,7 +62,7 @@ import android.widget.AdapterView.OnItemClickListener;
 
 // Test
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends Activity {
 
 	//private TextView gpa_view;
 
@@ -77,12 +77,12 @@ public class MainActivity extends ActionBarActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
-		final ActionBar actionBar = getSupportActionBar();
-//		actionBar.setDisplayShowHomeEnabled(false);
-//		actionBar.setDisplayShowTitleEnabled(false);
-//		actionBar.setDisplayUseLogoEnabled(false);
-//		actionBar.hide();
-//		setContentView(R.layout.activity_main);
+		final android.app.ActionBar actionBar = getActionBar();
+		actionBar.setDisplayShowHomeEnabled(false);
+		actionBar.setDisplayShowTitleEnabled(false);
+		actionBar.setDisplayUseLogoEnabled(false);
+		actionBar.hide();
+		setContentView(R.layout.activity_main);
 
 		//this.deleteDatabase("tasks.db");
 		tds = new TaskDataSource(this);

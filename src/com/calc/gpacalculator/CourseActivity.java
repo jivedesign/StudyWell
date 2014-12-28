@@ -30,7 +30,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class CourseActivity extends Activity {
+public class CourseActivity extends ActionBarActivity {
 
 	private String course_name;
 	private float course_mark;
@@ -48,7 +48,7 @@ public class CourseActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.course_activity);
 		
-		android.app.ActionBar actionBar = getActionBar();
+		ActionBar actionBar = getSupportActionBar();
 		actionBar.setDisplayHomeAsUpEnabled(true);
 		//getActionBar().setIcon(android.R.color.transparent);
 		
@@ -99,7 +99,8 @@ public class CourseActivity extends Activity {
 		// Create the buttons
 		alertDialogBuilder
 				.setCancelable(false)
-				.setPositiveButton("Save",new DialogInterface.OnClickListener() {
+				.setPositiveButton("Save",
+						new DialogInterface.OnClickListener() {
 							public void onClick(DialogInterface dialog, int id) {
 
 								CourseDataSource cds = new CourseDataSource(
@@ -192,8 +193,38 @@ public class CourseActivity extends Activity {
 		cds.open();
 		// List<Course> courses1_fromDB = cds.getAllCourses(); //Change to get
 		// courses from a semester?
-		List<Course> courses_fromDB = cds.getCoursesfromSem(s2c_ID); 
-
+		List<Course> courses_fromDB = cds.getCoursesfromSem(s2c_ID); // Change
+//																		// to
+//																		// get
+//																		// courses
+//																		// from
+//																		// a
+//																		// semester?
+//																		// CHANGE
+//		Log.d("database",
+//				"size of sem " + Integer.toString(courses_fromDB.size()));
+//		// Log.d("database", "size of all " +
+//		// Integer.toString(courses1_fromDB.size()) );
+//
+//		int i = courses_fromDB.size();
+//		for (int j = 0; j < i; j++) {
+//
+//			course_mark = cds.getCourseGradefromTasks(courses_fromDB.get(j)
+//					.getID(), tds);
+//
+//			// Log.d("marks", "Cactivity. s2c_ID = " +
+//			// Integer.toString(courses_fromDB.get(j).getSem2course()));
+//
+//			courses_fromDB.get(j).setMark(course_mark);
+//
+//			/*
+//			 * Log.d("marks", "Cactivity. s2c_ID = " +
+//			 * Integer.toString(courses_fromDB.get(j) .getSem2course()));
+//			 * 
+//			 * courses_fromDB.get(j).setMark(course_mark);
+//			 */
+//
+//		}
 		
 		if(courses_fromDB.isEmpty()){
 			

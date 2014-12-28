@@ -4,6 +4,6 @@
         android:title="Create a Task"
         android:icon="@drawable/ic_action_collections_collection"
         android:orderInCategory="0"
-        />
+        app:showAsAction="ifRoom" />
 
 </menu>
