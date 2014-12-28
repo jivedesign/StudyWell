@@ -132,13 +132,21 @@ public class TaskActivity extends ActionBarActivity {
 									float_weight = Float.parseFloat(task_weight
 											.getText().toString());
 
-									if ((float_weight > 100)
-											|| (float_weight < 1)) {
+									if (
+											(
+													//Both are wrong
+													((float_weight > 100) || (float_weight < 1)) 
+													&& (float_total_edit < 1) 
+											) ||
+													// Either one are wrong
+													((float_weight > 100) || (float_weight < 1)) 
+													|| (float_total_edit < 1) 
+											) {
 
 										AlertDialog.Builder dialog1 = new AlertDialog.Builder(
 												context);
 										dialog1.setTitle("Whoops!");
-										dialog1.setMessage("Input a weight from 1% to 100%");
+										dialog1.setMessage("Input a Weight from 1% to 100% and a Total not less than 1.");
 										dialog1.setPositiveButton(
 												"Okay",
 												new DialogInterface.OnClickListener() {
@@ -155,7 +163,58 @@ public class TaskActivity extends ActionBarActivity {
 
 										dialog1.show();
 
-									} else {
+									}
+									
+//									if (float_total_edit == 0) {
+//											AlertDialog.Builder dialog1 = new AlertDialog.Builder(
+//													context);
+//											dialog1.setTitle("Whoops!");
+//											dialog1.setMessage("Total cannot be 0.");
+//											dialog1.setPositiveButton(
+//													"Okay",
+//													new DialogInterface.OnClickListener() {
+//
+//														public void onClick(
+//																DialogInterface dialog,
+//																int id) {
+//															setup_add();
+//															dialog.cancel();
+//															
+//
+//														}
+//													});
+//
+//											dialog1.show();
+//
+//										
+//									}
+//									
+//									
+//									if ((float_weight > 100) || (float_weight < 1)) {
+//
+//										AlertDialog.Builder dialog1 = new AlertDialog.Builder(
+//												context);
+//										dialog1.setTitle("Whoops!");
+//										dialog1.setMessage("Input a weight from 1% to 100%");
+//										dialog1.setPositiveButton(
+//												"Okay",
+//												new DialogInterface.OnClickListener() {
+//
+//													public void onClick(
+//															DialogInterface dialog,
+//															int id) {
+//
+//														dialog.cancel();
+//														setup_add();
+//
+//													}
+//												});
+//
+//										dialog1.show();
+//
+//									}
+//									
+									else {
 
 										Log.d("weight",
 												Float.toString(float_weight));
@@ -334,12 +393,20 @@ public class TaskActivity extends ActionBarActivity {
 							.toString());
 
 					
-					if ((float_weight > 100) || (float_weight < 1)) {
-
+					if (
+							(
+									//Both are wrong
+									((float_weight > 100) || (float_weight < 1)) 
+									&& (float_total_edit < 1) 
+							) ||
+									// Either one are wrong
+									((float_weight > 100) || (float_weight < 1)) 
+									|| (float_total_edit < 1) 
+							) {
 						AlertDialog.Builder dialog1 = new AlertDialog.Builder(
 								context);
 						dialog1.setTitle("Whoops!");
-						dialog1.setMessage("Input a weight from 1% to 100%");
+						dialog1.setMessage("Input a Weight from 1% to 100% and a Total not less than 1.");
 						dialog1.setPositiveButton("Okay",
 								new DialogInterface.OnClickListener() {
 
@@ -356,8 +423,61 @@ public class TaskActivity extends ActionBarActivity {
 								});
 
 						dialog1.show();
-
-					} else {
+						
+						
+					}
+					
+//					if (float_total_edit == 0) {
+//						AlertDialog.Builder dialog1 = new AlertDialog.Builder(
+//								context);
+//						dialog1.setTitle("Whoops!");
+//						dialog1.setMessage("Total cannot be 0.");
+//						dialog1.setPositiveButton("Okay",
+//								new DialogInterface.OnClickListener() {
+//
+//									public void onClick(DialogInterface dialog,
+//											int id) {
+//
+//										dialog.cancel();
+//										
+//										// WE FIXED EDITING BY MAKING THESE ARGS FINAL
+//										
+//										setup_edit(tName, float_avg_edit, float_total_edit, float_weight, tID);
+//
+//									}
+//								});
+//
+//						dialog1.show();
+//
+//						
+//					}
+//					
+//					if ((float_weight > 100) || (float_weight < 1)) {
+//
+//						AlertDialog.Builder dialog1 = new AlertDialog.Builder(
+//								context);
+//						dialog1.setTitle("Whoops!");
+//						dialog1.setMessage("Input a weight from 1% to 100%.");
+//						dialog1.setPositiveButton("Okay",
+//								new DialogInterface.OnClickListener() {
+//
+//									public void onClick(DialogInterface dialog,
+//											int id) {
+//
+//										dialog.cancel();
+//										
+//										// WE FIXED EDITING BY MAKING THESE ARGS FINAL
+//										
+//										setup_edit(tName, float_avg_edit, float_total_edit, float_weight, tID);
+//
+//									}
+//								});
+//
+//						dialog1.show();
+//
+//					} 
+					
+					else {
 
 						tds1.updateFromDialog(new_taskName, float_avg_edit,
 								float_total_edit, float_weight, tID);

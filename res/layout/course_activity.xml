@@ -50,7 +50,6 @@
         android:layout_marginTop="30sp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
- 		
         tools:listitem="@layout/course_entity" >
 
     </ListView>

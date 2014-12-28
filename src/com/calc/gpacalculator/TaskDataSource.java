@@ -145,6 +145,8 @@ public class TaskDataSource {
 		float total = cursor.getFloat(1);
 		float weight = cursor.getFloat(2);
 
+		//if total is 0
+		
 		Log.d("calc",
 				"value of weight in getTaskGrade = " + Float.toString(weight));
 

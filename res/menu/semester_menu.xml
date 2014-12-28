@@ -6,7 +6,7 @@
         android:id="@+id/add_semester_menu"
         android:icon="@drawable/ic_action_content_new"
         android:title="Add a semester"
-        app:showAsAction="always">
+        >
     </item>
 
 
